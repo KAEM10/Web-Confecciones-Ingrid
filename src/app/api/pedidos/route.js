@@ -1,13 +1,10 @@
 import { NextResponse } from "next/server";
-import pool from "@/lib/db";
+import { db } from "@/lib/db";
 
 export async function GET() {
-    try {
-        const [rows] = await pool.query("SELECT * FROM pedidos");
-        return NextResponse.json(rows);
-    } catch (error) {
-        return NextResponse.json({ error: error.message }, { status: 500 });
-    }
+    const pedidos = await db.query("SELECT * FROM pedidos");
+    console.log("Pedidos recibidos:", pedidos);
+    return NextResponse.json(pedidos);
 }
 
 export async function POST(req) {
