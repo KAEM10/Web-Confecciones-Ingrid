@@ -25,7 +25,7 @@ export default function PedidoCard({ pedido }: PedidoProps) {
     };
 
     return (
-        <div className="bg-white shadow-md rounded-lg p-4 border-l-4">
+        <div className={`${getEstadoColor(pedido.estado)} rounded-lg p-4 border-l-4`}>
             <h2 className="text-lg font-semibold">{pedido.descripcion}</h2>
             <p>Cantidad: {pedido.cantidad}</p>
             <p>Entrega: {new Date(pedido.fecha_entrega).toLocaleDateString()}</p>

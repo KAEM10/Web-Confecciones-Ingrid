@@ -3,7 +3,7 @@ import { db } from "@/lib/db";
 
 export async function GET() {
     const pedidos = await db.query("SELECT * FROM pedidos");
-    console.log("Pedidos recibidos:", pedidos);
+    //console.log("Pedidos recibidos:", pedidos);
     return NextResponse.json(pedidos);
 }
 
