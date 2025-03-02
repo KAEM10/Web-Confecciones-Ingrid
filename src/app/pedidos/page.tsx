@@ -1,14 +1,18 @@
 "use client";
 import { useEffect, useState } from "react";
-import PedidoCard from "../components/pedidoCard";
+import PedidoCard from "../../components/pedidoCard";
 import { fetchPedidos } from "@/app/services/pedidoService";
 
 interface Pedido {
     id: number;
-    descripcion: string;
-    cantidad: number;
-    fecha_entrega: string;
+    nombre_cliente: string;
+    apellido_cliente: string;
+    telefono: string;
+    precioTotal: number;
     estado: string;
+    descripcion: string;
+    fecha_entrega: string;
+    fecha_pedido: string;
 }
 
 export default function PedidosPage() {
