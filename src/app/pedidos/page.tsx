@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import PedidoCard from "../../components/pedidoCard";
-import { fetchPedidos } from "@/app/services/pedidoService";
+import { fetchPedidos } from "@/services/pedidoService";
 
 interface Pedido {
     id: number;
